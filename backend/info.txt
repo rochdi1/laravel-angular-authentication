@@ -1,0 +1,30 @@
+### Resource: https://www.youtube.com/watch?v=H5LwoLoBIPY&list=PLe30vg_FG4OSbizS6Gpw_LICp9zBcmjZU&index=9
+
+https://blog.pusher.com/laravel-jwt/
+
+//generator code 
+node -e "console.log(require('crypto').randomBytes(256).toString('base64'));"
+
+expi: dpkVTxtEhGiIczEwdU4qF7OSi6rxcVvcRa6RclvnJAAZtvn3NPD57ssvk++501KntyMyQyo5sJw7E+rSewKVjHjEpgOUVxkghhYukXTBGdX3LZFaHYUIGi1dYlDHVhEPlbqTQZdiLvpzPwICjI+0fyOKIULjlthbVh93oGwZuQjFW32NPGZ8x1wCkq2184EZ1JO6wrO99b4/sh4YycgP5fe7yA0Iuz2/ltSmWwyGpKuIowbvuZriSZWr5qRbANn0jZf04n2Jd73xHunzPyVZRiEnRzpfi6S8rA28Cj8+Scf4JMelACBomgDs3Y6X971AqF84PSA0b6IPA3mfDS0MdA
+
+
+// create middleware CORS
+php artisan make:middleware CORS
+
+app>Http>Moddleware>CORS.php
+ public function handle($request, Closure $next)
+    {
+        header('Access-Control-Allow-Origin : *');
+        header('Access-Control-Allow-Headers : Content-type, X-Auth-Token, Authorization, Origin');
+        return $next($request);
+    }
+
+
+/// error 
+Token generation failing: Type error: Argument 2 passed to Lcobucci\\JWT\\Signer\\Hmac::createHash() must be an instance of Lcobucci\\JWT\\Signer\\Key, null given #1474
+
+losung :
+https://github.com/tymondesigns/jwt-auth/issues/1474
+
+php artisan cache:clear
+php artisan config:clear

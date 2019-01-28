@@ -1,0 +1,6 @@
+https://loiane.com/2017/08/how-to-add-bootstrap-to-an-angular-cli-project/
+
+ng g component ...
+Routing:
+ng g m app-routing --flat --module=app
+

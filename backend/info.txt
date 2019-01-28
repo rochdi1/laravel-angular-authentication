@@ -28,3 +28,12 @@ https://github.com/tymondesigns/jwt-auth/issues/1474
 
 php artisan cache:clear
 php artisan config:clear
+
+
+MAIL_DRIVER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=465
+MAIL_USERNAME=rochdi.mailserver@gmail.com
+MAIL_PASSWORD=esa309
+MAIL_ENCRYPTION=ssl
+
